@@ -1,0 +1,407 @@
+:root {
+  /* Lavender Rose & Warm Sunset Palette (Light Theme) */
+  --color-white: #FFFFFF;
+  --color-off-white: #FEF7F9; /* Lavender Rose tint */
+  
+  /* Text and dark elements */
+  --color-navy-dark: #3A1723; /* Dark warm tone for readability */
+  --color-light-gray: #8A6470; /* Muted tone */
+  --color-text-muted: #6B4C56; 
+  
+  /* The New Palette */
+  --color-lavender-rose: #FBAED2; 
+  --color-red: #D91A3C; /* Elegant red */
+  --color-orange: #FF7E36; /* Vibrant orange */
+  --color-peach: #FFD4C4; /* Soft peach/orange */
+
+  /* Semantic color mapping */
+  --color-gold: var(--color-orange);
+  --color-gold-light: var(--color-peach);
+  --color-primary: var(--color-red);
+  --color-indigo: var(--color-orange);
+  --color-royal-blue: var(--color-red);
+  --color-emerald: var(--color-lavender-rose);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-red), var(--color-orange));
+  --gradient-accent: linear-gradient(135deg, var(--color-orange), var(--color-lavender-rose));
+  --gradient-gold: linear-gradient(135deg, var(--color-orange), #FFB067);
+  
+  /* Glassmorphism (Light Theme) */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(217, 26, 60, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(217, 26, 60, 0.08);
+  
+  /* Typography */
+  --font-heading: 'Bodoni Moda', serif;
+  --font-body: 'DM Sans', sans-serif;
+  
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-pill: 9999px;
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-navy-dark);
+  background-color: var(--color-off-white);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+/* Background Pattern (Subtle grid + radial glow) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(217, 26, 60, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(255, 126, 54, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-navy-dark);
+  line-height: 1.2;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+/* Utility Classes */
+.container {
+  width: 92%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-lg);
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Typography Utilities */
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(217, 26, 60, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(217, 26, 60, 0.4);
+}
+
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-indigo);
+  border: 1px solid var(--color-indigo);
+}
+
+.btn-secondary:hover {
+  background: var(--color-lavender);
+  transform: translateY(-2px);
+}
+
+/* Pulsing effect for main CTA */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(217, 26, 60, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(217, 26, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 26, 60, 0); }
+}
+
+.btn-pulse {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Navigation Links Hover */
+.nav-item {
+  position: relative;
+  font-weight: 500;
+  color: var(--color-navy-dark);
+  transition: var(--transition-smooth);
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background: var(--gradient-primary);
+  transition: var(--transition-smooth);
+  transform: translateX(-50%);
+}
+
+.nav-item:hover {
+  color: var(--color-indigo);
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform-origin: 0%;
+  z-index: 1000;
+}
+
+/* Form Elements */
+.input-field {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-light-gray);
+  background: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-navy-dark);
+  transition: var(--transition-smooth);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-indigo);
+  box-shadow: 0 0 0 4px var(--color-lavender);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  /* Exclude map sections or specific 0-padding sections */
+  .section[style*="height: 500px"], 
+  .section.mobile-p-none {
+    padding: 0 !important;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .btn {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  /* Forcefully reduce large gaps on mobile */
+  div {
+    /* We can't easily target inline gap values safely, but we can reduce margin bottoms */
+  }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS OVERRIDES
+   These classes use !important to guarantee they override 
+   inline styles ONLY on screens <= 768px. Desktop is untouched.
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Layout Overrides */
+  .mobile-col {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  .mobile-col-reverse {
+    flex-direction: column-reverse !important;
+    gap: 1.5rem !important;
+  }
+  .mobile-grid-1 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .mobile-block {
+    display: block !important;
+  }
+  
+  /* Sizing and Spacing Overrides */
+  .mobile-w-full {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .mobile-h-auto {
+    height: auto !important;
+  }
+  .mobile-p-sm {
+    padding: 3rem 0 !important;
+  }
+  .mobile-p-none {
+    padding: 0 !important;
+  }
+  .mobile-pt-sm {
+    padding-top: 2rem !important;
+  }
+  .mobile-px-sm {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .mobile-gap-sm {
+    gap: 1.5rem !important;
+  }
+  
+  /* Typography Overrides */
+  .mobile-text-center {
+    text-align: center !important;
+  }
+  .mobile-h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    min-height: auto !important;
+    margin-bottom: 1rem !important;
+  }
+  .mobile-h1 > div {
+    min-height: 100px !important;
+    justify-content: center !important;
+  }
+  .mobile-h1 + div {
+    min-height: auto !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .mobile-h2 {
+    font-size: 2rem !important;
+  }
+  
+  /* Visibility */
+  .mobile-hide {
+    display: none !important;
+  }
+  .mobile-show-flex {
+    display: flex !important;
+  }
+  
+  .mobile-hero-visual {
+    height: 400px !important;
+    min-height: 400px !important;
+  }
+  
+  /* Specific Component Tweaks */
+  .hero-glass-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 1rem !important;
+    bottom: 1rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+  }
+  
+  .fab-stack {
+    bottom: 1rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    transform: none !important;
+  }
+  .fab-stack > div {
+    transform: scale(0.85);
+    transform-origin: bottom center;
+  }
+  
+  /* Hamburger Menu Fullscreen Overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--color-white);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu-link {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-navy-dark);
+    text-decoration: none;
+  }
+}
