@@ -13,7 +13,7 @@ const Footer = () => {
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                             <Sparkles color="var(--color-gold)" size={28} />
                             <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-navy-dark)', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '2px' }}>
-                                Master Ramcharan
+                                Psychic Charan
                             </span>
                         </div>
                         <p style={{ lineHeight: '1.8', marginBottom: '2rem', fontSize: '0.95rem' }}>
@@ -56,15 +56,15 @@ const Footer = () => {
                         <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                             <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                                 <MapPin color="var(--color-gold)" size={20} style={{ flexShrink: 0, marginTop: '4px' }} />
-                                <a href="https://maps.google.com/?q=702+Twin+Oaks+Dr+apt+2,+Decatur,+GA+30030" target="_blank" rel="noopener noreferrer" style={{ lineHeight: '1.5', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>702 Twin Oaks Dr apt 2,<br />Decatur, GA 30030</a>
+                                <a href="https://maps.google.com/?q=3740+Club+Dr+%232209,+Duluth,+GA+30096" target="_blank" rel="noopener noreferrer" style={{ lineHeight: '1.5', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>3740 Club Dr #2209,<br />Duluth, GA 30096</a>
                             </li>
                             <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                                 <Phone color="var(--color-gold)" size={20} style={{ flexShrink: 0 }} />
-                                <a href="tel:+14704520154" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>+1 (470) 452-0154</a>
+                                <a href="tel:+14704611807" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>+1(470) 461-1807</a>
                             </li>
                             <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                                 <Mail color="var(--color-gold)" size={20} style={{ flexShrink: 0 }} />
-                                <a href="mailto:shivakumaramuddappa19@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>shivakumaramuddappa19@gmail.com</a>
+                                <a href="mailto:Psychiccharan@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>Psychiccharan@gmail.com</a>
                             </li>
                             <li style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginTop: '1rem', padding: '1rem', background: 'rgba(0, 0, 0, 0.03)', borderRadius: '0.5rem', border: '1px solid rgba(44, 94, 173, 0.1)' }}>
                                 <Shield color="var(--color-gold)" size={20} style={{ flexShrink: 0 }} />
@@ -76,7 +76,7 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '2rem', borderTop: '1px solid rgba(0, 0, 0, 0.05)', fontSize: '0.9rem', color: 'rgba(0,0,0,0.6)' }}>
-                    <p>&copy; {new Date().getFullYear()} Master Ramcharan Elite Consulting. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Psychic Charan Elite Consulting. All rights reserved.</p>
                     <div style={{ display: 'flex', gap: '2rem' }}>
                         <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy Policy</a>
                         <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Terms of Service</a>

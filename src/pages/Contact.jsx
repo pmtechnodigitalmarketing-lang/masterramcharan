@@ -38,7 +38,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', marginBottom: '0.2rem' }}>Secure VIP Line</h3>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--color-navy-dark)' }}>+1 (470) 452-0154</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--color-navy-dark)' }}>+1(470) 461-1807</div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginTop: '0.3rem' }}>Available 24/7 for urgent energetic interventions</div>
                 </div>
               </div>
@@ -49,7 +49,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', marginBottom: '0.2rem' }}>Encrypted Email</h3>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--color-navy-dark)' }}>shivakumaramuddappa19@gmail.com</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--color-navy-dark)' }}>Psychiccharan@gmail.com</div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginTop: '0.3rem' }}>Average response time: &lt; 2 hours</div>
                 </div>
               </div>
@@ -61,8 +61,8 @@ const Contact = () => {
                 <div>
                   <h3 style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', marginBottom: '0.2rem' }}>Global Availability</h3>
                   <div style={{ fontSize: '1rem', fontWeight: 'bold', color: 'var(--color-navy-dark)', lineHeight: '1.4' }}>
-                    702 Twin Oaks Dr apt 2,<br/>
-                    Decatur, GA 30030
+                    3740 Club Dr #2209,<br/>
+                    Duluth, GA 30096
                   </div>
                 </div>
               </div>
@@ -155,7 +155,7 @@ const Contact = () => {
       {/* Global Map Section - Interactive */}
       <section className="section" style={{ padding: '2rem 1rem 4rem 1rem', backgroundColor: 'var(--color-off-white)', display: 'flex', justifyContent: 'center' }}>
         <div style={{ position: 'relative', width: '95%', maxWidth: '1400px', height: '600px', borderRadius: '1.5rem', overflow: 'hidden', boxShadow: '0 12px 35px rgba(0,0,0,0.1)' }}>
-          <AnimatedMap address="702 Twin Oaks Dr apt 2, Decatur, GA 30030" style={{ width: '100%', height: '100%' }} />
+          <AnimatedMap address="3740 Club Dr #2209, Duluth, GA 30096" style={{ width: '100%', height: '100%' }} />
         </div>
       </section>
 

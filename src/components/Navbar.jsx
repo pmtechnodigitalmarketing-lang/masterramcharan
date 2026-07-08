@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="navbar glass-panel">
             <div className="logo">
                 <Sparkles className="logo-icon" size={24} />
-                <span className="logo-text">Master Ramcharan</span>
+                <span className="logo-text">Psychic Charan</span>
             </div>
             <ul className="nav-links">
                 <li><a href="#hero">Home</a></li>

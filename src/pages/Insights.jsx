@@ -96,7 +96,7 @@ const Insights = () => {
               The Cosmic <span className="text-gradient-gold">Journal</span>
             </h1>
             <p style={{ maxWidth: '700px', margin: '0 auto', fontSize: '1.2rem', color: 'var(--color-light-gray)', lineHeight: '1.6' }}>
-              Proprietary insights, astrological forecasts, and case studies on energetic sovereignty from the Master Ramcharan collective.
+              Proprietary insights, astrological forecasts, and case studies on energetic sovereignty from the Psychic Charan collective.
             </p>
           </motion.div>
         </div>

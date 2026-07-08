@@ -34,7 +34,7 @@ const About = () => {
               </div>
             </div>
             <h1 className="mobile-h1" style={{ fontSize: '5rem', marginBottom: '1.5rem', color: 'var(--color-navy-dark)', fontFamily: 'var(--font-heading)', letterSpacing: '2px', lineHeight: '1.1' }}>
-              The <span className="text-gradient-gold">Master Ramcharan</span> Collective
+              The <span className="text-gradient-gold">Psychic Charan</span> Collective
             </h1>
             <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.3rem', color: 'var(--color-light-gray)', lineHeight: '1.7' }}>
               We are the world's most exclusive spiritual agency, dedicated to safeguarding the elite from unseen forces and aligning their karmic paths for unprecedented, absolute success.
@@ -56,7 +56,7 @@ const About = () => {
                 Mastery Over the Unseen
               </h2>
               <p style={{ marginBottom: '1.5rem', color: 'var(--color-light-gray)', fontSize: '1.15rem', lineHeight: '1.8' }}>
-                At Master Ramcharan, we believe that true wealth and success are impossible without absolute spiritual sovereignty. The physical world is merely a reflection of the energetic plane. When your subtle body is compromised by hidden blockages, ancestral karma, or directed negativity, even the most sound business strategies will falter.
+                At Psychic Charan, we believe that true wealth and success are impossible without absolute spiritual sovereignty. The physical world is merely a reflection of the energetic plane. When your subtle body is compromised by hidden blockages, ancestral karma, or directed negativity, even the most sound business strategies will falter.
               </p>
               <p style={{ marginBottom: '2.5rem', color: 'var(--color-text-muted)', fontSize: '1.05rem', lineHeight: '1.7' }}>
                 We combine ancient, time-tested Vedic sciences with modern quantum healing methodologies to restore your natural state of abundance. Unlike traditional practitioners, we operate with the extreme efficiency, confidentiality, and exact precision of a high-end corporate consultancy, ensuring your ascension is swift and thoroughly protected.
@@ -205,7 +205,7 @@ const About = () => {
 
           <motion.div variants={staggerContainer} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
             {[
-              { text: "Master Ramcharan single-handedly dismantled a corporate espionage hex placed on my firm. Within 48 hours, our stock rebounded and the leak was exposed.", author: "James T.", role: "CEO, Tech Conglomerate" },
+              { text: "Psychic Charan single-handedly dismantled a corporate espionage hex placed on my firm. Within 48 hours, our stock rebounded and the leak was exposed.", author: "James T.", role: "CEO, Tech Conglomerate" },
               { text: "I was suffering from unexplained chronic fatigue that no doctor could diagnose. The Quantum Audit revealed a generational attachment. I am now completely free.", author: "Elena R.", role: "Private Investor" },
               { text: "Their 24/7 Vedic Protection shield is the best investment I have ever made. My family feels an overwhelming sense of peace, and my business has tripled.", author: "Marcus V.", role: "Real Estate Developer" }
             ].map((review, i) => (

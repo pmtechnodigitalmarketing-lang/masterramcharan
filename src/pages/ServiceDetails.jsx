@@ -71,10 +71,10 @@ const ServiceDetails = () => {
                 Request Immediate Intervention <ArrowRight size={18} />
               </a>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <a href="tel:+1234567890" className="btn" style={{ backgroundColor: 'transparent', color: 'var(--color-navy-dark)', border: '2px solid var(--color-navy-dark)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', padding: '0.8rem 1.5rem', borderRadius: '2rem', textDecoration: 'none' }}>
+                <a href="tel:+14704611807" className="btn" style={{ backgroundColor: 'transparent', color: 'var(--color-navy-dark)', border: '2px solid var(--color-navy-dark)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', padding: '0.8rem 1.5rem', borderRadius: '2rem', textDecoration: 'none' }}>
                   <Phone size={18} /> Call Now
                 </a>
-                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn" style={{ backgroundColor: '#25D366', color: 'white', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', padding: '0.8rem 1.5rem', borderRadius: '2rem', textDecoration: 'none', border: '2px solid #25D366' }}>
+                <a href="https://wa.me/14704611807" target="_blank" rel="noopener noreferrer" className="btn" style={{ backgroundColor: '#25D366', color: 'white', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', padding: '0.8rem 1.5rem', borderRadius: '2rem', textDecoration: 'none', border: '2px solid #25D366' }}>
                   <MessageCircle size={18} /> WhatsApp
                 </a>
               </div>

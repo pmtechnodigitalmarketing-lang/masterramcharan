@@ -41,12 +41,12 @@ const Layout = () => {
           <a href="/find-us" className="fab-action" style={{ background: '#E53935' }} title="Location">
             <MapPin size={22} color="white" />
           </a>
-          <a href="mailto:shivakumaramuddappa19@gmail.com" className="fab-action" style={{ background: '#1E88E5' }} title="Email Us">
+          <a href="mailto:Psychiccharan@gmail.com" className="fab-action" style={{ background: '#1E88E5' }} title="Email Us">
             <Mail size={22} color="white" />
           </a>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-          <a href="tel:+14704520154" className="fab-action" style={{ background: '#43A047' }} title="Call Us">
+          <a href="tel:+14704611807" className="fab-action" style={{ background: '#43A047' }} title="Call Us">
             <Phone size={22} color="white" />
           </a>
           <a href="https://wa.me/14704520154" className="fab-action" style={{ background: '#25D366' }} title="WhatsApp">
@@ -81,7 +81,7 @@ const Layout = () => {
             <div style={{ background: 'var(--gradient-primary)', padding: '0.4rem', borderRadius: '50%', display: 'flex' }}>
               <Sparkles size={20} color="white" />
             </div>
-            <span style={{ color: 'var(--color-navy-dark)', letterSpacing: '-0.5px' }} className="mobile-hide">Master Ramcharan</span>
+            <span style={{ color: 'var(--color-navy-dark)', letterSpacing: '-0.5px' }} className="mobile-hide">Psychic Charan</span>
           </Link>
           <ul className="mobile-hide" style={{ display: 'flex', gap: '3rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }}>
             <li><Link to="/" className="nav-item text-link">Home</Link></li>
@@ -91,7 +91,7 @@ const Layout = () => {
             <li><Link to="/insights" className="nav-item text-link">Insights</Link></li>
           </ul>
           <div className="mobile-hide" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <a href="tel:+14704520154" className="btn btn-secondary" style={{ padding: '0.7rem 1.5rem', borderRadius: 'var(--radius-pill)', display: 'flex', gap: '0.5rem', alignItems: 'center', color: 'var(--color-navy-dark)', border: '1px solid var(--color-orange)' }}>
+            <a href="tel:+14704611807" className="btn btn-secondary" style={{ padding: '0.7rem 1.5rem', borderRadius: 'var(--radius-pill)', display: 'flex', gap: '0.5rem', alignItems: 'center', color: 'var(--color-navy-dark)', border: '1px solid var(--color-orange)' }}>
               <Phone size={18} color="var(--color-orange)" /> Call Now
             </a>
             <Link to="/contact" className="btn btn-primary btn-pulse" style={{ padding: '0.8rem 1.8rem', borderRadius: 'var(--radius-pill)' }}>
@@ -124,7 +124,7 @@ const Layout = () => {
             <Link to="/insights" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Insights</Link>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '2rem', width: '100%', maxWidth: '300px' }}>
               <Link to="/contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ padding: '1rem', flex: 1, justifyContent: 'center' }}>Book Consultation</Link>
-              <a href="tel:+14704520154" className="btn btn-secondary" style={{ padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', width: '52px', height: '52px', flexShrink: 0 }}>
+              <a href="tel:+14704611807" className="btn btn-secondary" style={{ padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', width: '52px', height: '52px', flexShrink: 0 }}>
                 <Phone size={22} />
               </a>
             </div>
@@ -158,7 +158,7 @@ const Layout = () => {
           <div style={{ flex: '1 1 300px' }}>
             <Link to="/" className="logo" style={{ marginBottom: '1.5rem', display: 'inline-flex', alignItems: 'center' }}>
               <Sparkles className="logo-icon" size={28} color="var(--color-gold)" style={{ marginRight: '0.5rem' }} />
-              <span style={{ color: 'var(--color-navy-dark)', fontSize: '1.8rem', fontFamily: 'var(--font-heading)', letterSpacing: '2px', textTransform: 'uppercase' }}>Master Ramcharan</span>
+              <span style={{ color: 'var(--color-navy-dark)', fontSize: '1.8rem', fontFamily: 'var(--font-heading)', letterSpacing: '2px', textTransform: 'uppercase' }}>Psychic Charan</span>
             </Link>
             <p style={{ fontSize: '1rem', color: 'var(--color-light-gray)', lineHeight: '1.8', marginBottom: '2rem' }}>
               The premier destination for high-end spiritual consulting, karmic healing, and absolute occult protection for global leaders and visionaries.
@@ -166,15 +166,15 @@ const Layout = () => {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', padding: 0, marginBottom: '2rem' }}>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem', color: 'var(--color-light-gray)' }}>
                 <Phone size={16} color="var(--color-gold)" style={{ marginTop: '0.1rem', flexShrink: 0 }} />
-                <a href="tel:+14704520154" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>+1 (470) 452-0154</a>
+                <a href="tel:+14704611807" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>+1(470) 461-1807</a>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem', color: 'var(--color-light-gray)' }}>
                 <Mail size={16} color="var(--color-gold)" style={{ marginTop: '0.1rem', flexShrink: 0 }} />
-                <a href="mailto:shivakumaramuddappa19@gmail.com" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>shivakumaramuddappa19@gmail.com</a>
+                <a href="mailto:Psychiccharan@gmail.com" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>Psychiccharan@gmail.com</a>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem', color: 'var(--color-light-gray)' }}>
                 <MapPin size={16} color="var(--color-gold)" style={{ marginTop: '0.1rem', flexShrink: 0 }} />
-                <a href="https://maps.google.com/?q=702+Twin+Oaks+Dr+apt+2,+Decatur,+GA+30030" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>702 Twin Oaks Dr apt 2, Decatur, GA 30030</a>
+                <a href="https://maps.google.com/?q=702+Twin+Oaks+Dr+apt+2,+Decatur,+GA+30030" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>3740 Club Dr #2209, Duluth, GA 30096</a>
               </li>
             </ul>
 
@@ -213,7 +213,7 @@ const Layout = () => {
             {/* Wide Footer Map */}
             <div style={{ width: '100%', height: '180px', borderRadius: 'var(--radius-md)', overflow: 'hidden', position: 'relative', border: '1px solid rgba(0, 0, 0, 0.05)', marginTop: 'auto' }}>
               <div style={{ position: 'absolute', inset: 0, opacity: 0.9 }}>
-                <AnimatedMap address="702 Twin Oaks Dr apt 2, Decatur, GA 30030" style={{ width: '100%', height: '100%' }} />
+                <AnimatedMap address="3740 Club Dr #2209, Duluth, GA 30096" style={{ width: '100%', height: '100%' }} />
               </div>
             </div>
           </div>
@@ -238,7 +238,7 @@ const Layout = () => {
         {/* Bottom Bar */}
         <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.05)', background: 'rgba(0,0,0,0.02)' }}>
           <div className="container mobile-col mobile-text-center mobile-gap-sm" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0', fontSize: '0.85rem', color: 'rgba(0,0,0,0.6)' }}>
-            <p style={{ margin: 0 }}>&copy; 2017 Master Ramcharan Agency. Absolute Discretion Assured.</p>
+            <p style={{ margin: 0 }}>&copy; 2017 Psychic Charan Agency. Absolute Discretion Assured.</p>
             <div style={{ display: 'flex', gap: '2rem' }}>
               <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>NDA Policy</span>
               <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>Terms of Engagement</span>
