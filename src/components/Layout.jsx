@@ -77,11 +77,8 @@ const Layout = () => {
             border: '1px solid rgba(21, 145, 220, 0.2)'
           }}
         >
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', fontWeight: '700', fontSize: '1.4rem' }}>
-            <div style={{ background: 'var(--gradient-primary)', padding: '0.4rem', borderRadius: '50%', display: 'flex' }}>
-              <Sparkles size={20} color="white" />
-            </div>
-            <span style={{ color: 'var(--color-navy-dark)', letterSpacing: '-0.5px' }} className="mobile-hide">Psychic Charan</span>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <img src="/images/Psychic%20Charan%20Logo.webp" alt="Psychic Charan Logo" style={{ height: '60px', width: 'auto' }} />
           </Link>
           <ul className="mobile-hide" style={{ display: 'flex', gap: '3rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }}>
             <li><Link to="/" className="nav-item text-link">Home</Link></li>
@@ -157,8 +154,7 @@ const Layout = () => {
           {/* Brand Column */}
           <div style={{ flex: '1 1 300px' }}>
             <Link to="/" className="logo" style={{ marginBottom: '1.5rem', display: 'inline-flex', alignItems: 'center' }}>
-              <Sparkles className="logo-icon" size={28} color="var(--color-gold)" style={{ marginRight: '0.5rem' }} />
-              <span style={{ color: 'var(--color-navy-dark)', fontSize: '1.8rem', fontFamily: 'var(--font-heading)', letterSpacing: '2px', textTransform: 'uppercase' }}>Psychic Charan</span>
+              <img src="/images/Psychic%20Charan%20Logo.webp" alt="Psychic Charan Logo" style={{ height: '80px', width: 'auto' }} />
             </Link>
             <p style={{ fontSize: '1rem', color: 'var(--color-light-gray)', lineHeight: '1.8', marginBottom: '2rem' }}>
               The premier destination for high-end spiritual consulting, karmic healing, and absolute occult protection for global leaders and visionaries.

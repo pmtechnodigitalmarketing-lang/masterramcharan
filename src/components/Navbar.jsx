@@ -5,8 +5,7 @@ const Navbar = () => {
     return (
         <nav className="navbar glass-panel">
             <div className="logo">
-                <Sparkles className="logo-icon" size={24} />
-                <span className="logo-text">Psychic Charan</span>
+                <img src="/images/Psychic%20Charan%20Logo.webp" alt="Psychic Charan Logo" style={{ height: '55px', width: 'auto' }} />
             </div>
             <ul className="nav-links">
                 <li><a href="#hero">Home</a></li>
