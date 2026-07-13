@@ -42,19 +42,19 @@ const Home = () => {
       text: "Love Solutions in 24 Hours",
       color: "var(--gradient-primary)",
       subtext: "Experience immediate, guaranteed relationship restoration. We utilize powerful spiritual alignments to bring back lost love and heal broken bonds within a single day.",
-      image: "/images/You love each other — but commitment still feels….webp"
+      image: "/images/Psychic Charan Bn - 2.webp"
     },
     {
       text: "Powerful Jinn Removal",
       color: "var(--gradient-accent)",
       subtext: "Safeguard your life, home, and energy from unseen, malicious entities. Our expert spiritual evictions provide instant relief from dark forces and paranormal disturbances.",
-      image: "/images/This item is unavailable - Etsy.webp"
+      image: "/images/Psychic Charan Bn - 3.webp"
     },
     {
       text: "Deep Love Compatibility",
       color: "var(--gradient-gold)",
       subtext: "Discover the profound karmic purpose you share with your partner. We decode astrological synastry to reveal soulmate connections and permanently clear relationship blockages.",
-      image: "/images/Érintés.webp"
+      image: "/images/Psychic Charan Bn- 1.webp"
     }
   ];
 
