@@ -1,30 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Star, Shield, Heart, Briefcase, Zap, Moon, Compass, Sparkles, Gem, Home, Activity, Lock, Eye, Sun, User, Users, Feather, Crosshair, ArrowRight, ArrowLeft } from 'lucide-react';
-
-const services = [
-  { id: 'vedic-astrology', name: 'Vedic Astrology', image: '/images/Unlocking the Power of Mantras in Vedic Astrology_ Elevate Your Consciousness and Heal Your Mind.webp', objectPosition: 'center top', desc: 'Deep dive into your natal chart using ancient Indian astrological systems.' },
-  { id: 'astrocartography', name: 'Astrocartography', image: '/images/Birth Chart Analysis Online - Unlock Your Career and Life Path.webp', desc: 'Find your power lines and optimal geographic locations for success.' },
-  { id: 'karma-clearing', name: 'Karma Clearing', image: '/images/This item is unavailable - Etsy (1).webp', desc: 'Release ancestral cycles and remove deep-rooted karmic blocks.' },
-  { id: 'twin-flame-reading', name: 'Twin Flame Reading', image: '/images/Twin Flame & Soulmate 2026 Forecast - Love Energy Reading - Divine Connection Insight - Personali___.webp', desc: 'Understand your soul contracts and romantic compatibility dynamics.' },
-  { id: 'blockage-removal', name: 'Blockage Removal', image: '/images/Bad Karma Removal Spell – Reclaim Balance and Clear Blockages.webp', desc: 'Eradicate energetic stagnation preventing your personal growth.' },
-  { id: 'abundance-alignment', name: 'Abundance Alignment', image: '/images/1147855023800006330.webp', desc: 'Align your auric frequency with wealth, success, and prosperity.' },
-  { id: 'hex-removal', name: 'Hex Removal', image: '/images/✨ Gideni Geri Getirme Ritüeliyle Aşkı Yeniden Kazan ✨.webp', desc: 'Comprehensive protection and removal of dark spiritual interference.' },
-  { id: 'spiritual-awakening', name: 'Spiritual Awakening', image: '/images/Embracing Oneness.webp', desc: 'Guidance through your dark night of the soul into enlightenment.' },
-  { id: 'corporate-astrology', name: 'Corporate Astrology', image: '/images/Renowned Astrologer in Kolkata – Anjan Shastri\'s Trusted Guidance.webp', desc: 'Strategic cosmic timing for product launches and business scaling.' },
-  { id: 'medical-astrology', name: 'Medical Astrology', image: '/images/Medicina Antroposófica.webp', desc: 'Identify energetic health dispositions and holistic remedies.' },
-  { id: 'chakra-balancing', name: 'Chakra Balancing', image: '/images/37084396930851691.webp', desc: 'Total realignment and clearing of your 7 primary energy centers.' },
-  { id: 'past-life-regression', name: 'Past Life Regression', image: '/images/Past life regressionist.webp', desc: 'Access the Akashic records to uncover your past incarnations.' },
-  { id: 'tarot-divination', name: 'Tarot Divination', image: '/images/Using Tarot Spreads for Specific Questions and Situations _ Embark on a Spiritual Journey_ Transf___.webp', desc: 'Direct, channeled guidance using premium esoteric tarot decks.' },
-  { id: 'real-estate-astrology', name: 'Real Estate Astrology', image: '/images/Aries Building Your Wealth Foundation – April 1….webp', desc: 'Find energetically optimal properties for purchase or development.' },
-  { id: 'gemstone-prescription', name: 'Gemstone Prescription', image: '/images/gemstone-recommendation.webp', desc: 'Specific, high-frequency crystal recommendations to enhance your chart.' },
-  { id: 'numerology-analysis', name: 'Numerology Analysis', image: '/images/Unlocking the Hidden Codes of Life_ A Deep Dive___.webp', desc: 'Decode the esoteric vibrations of your birth date and given name.' },
-  { id: 'vastu-shastra', name: 'Vastu Shastra', image: '/images/53761789299275795.webp', desc: 'Optimize the spatial geometry and energy flow of your residence.' },
-  { id: 'evil-eye-protection', name: 'Evil Eye Protection', image: '/images/Evil Eye Protection by fineartspro.webp', desc: 'Install impenetrable psychic wards against jealousy and ill-will.' },
-  { id: 'aura-cleansing', name: 'Aura Cleansing', image: '/images/discover-personal-energy.webp', desc: 'Remove spiritual parasites and patch tears in your auric field.' },
-  { id: 'marriage-matching', name: 'Marriage Matching', image: '/images/989243874406593923.webp', desc: 'Comprehensive synastry readings for lifelong partnership alignment.' }
-];
+import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { services } from '../data/services';
+import SEO from '../components/SEO';
+import { buildBreadcrumbSchema } from '../schema';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -53,7 +33,19 @@ const StateServices = () => {
 
   return (
     <motion.div initial="hidden" animate="visible" exit="hidden" style={{ minHeight: '100vh', backgroundColor: 'var(--color-off-white)' }}>
-      
+      <SEO
+        title={`Psychic Services in ${formattedStateName} | Psychic Charan`}
+        description={`Elite esoteric guidance and proprietary energetic clearings for clients in ${formattedStateName}. Explore our full range of spiritual consulting services.`}
+        canonical={`/location/${stateId}`}
+        schema={[
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Find Us', url: '/find-us' },
+            { name: formattedStateName, url: `/location/${stateId}` },
+          ]),
+        ]}
+      />
+
       {/* Header */}
       <section style={{ backgroundColor: 'var(--color-navy-dark)', padding: '8rem 0 4rem 0', textAlign: 'center' }}>
         <div className="container">
@@ -75,9 +67,9 @@ const StateServices = () => {
       <section className="section" style={{ padding: '6rem 0' }}>
         <div className="container">
           <motion.div variants={staggerContainer} className="services-grid-4x5">
-            {services.map((service, i) => {
+            {services.map((service) => {
               return (
-                <motion.div key={i} variants={fadeInUp} style={{
+                <motion.div key={service.id} variants={fadeInUp} style={{
                   background: 'white',
                   borderRadius: '1rem',
                   padding: '0 0 2rem 0',
@@ -104,28 +96,28 @@ const StateServices = () => {
                 }}
                 >
                   <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', marginBottom: '1.5rem', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img 
-                      src={service.image} 
-                      alt={service.name} 
+                    <img
+                      src={service.image}
+                      alt={service.title}
                       className="service-image mobile-img-animate"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: service.objectPosition || 'center', transition: 'transform 0.5s ease' }} 
-                      loading="lazy" 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transition: 'transform 0.5s ease' }}
+                      loading="lazy"
                     />
                   </div>
                   <div style={{ padding: '0 1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, width: '100%' }}>
                     <h3 style={{ fontSize: '1.25rem', color: 'var(--color-navy-dark)', fontFamily: 'var(--font-heading)', marginBottom: '1rem' }}>
-                      {service.name}
+                      {service.title}
                     </h3>
                     <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flex: 1 }}>
-                      {service.desc}
+                      {service.shortDescription}
                     </p>
-                    
-                    <Link to={`/services/${service.id}`} style={{ 
+
+                    <Link to={`/services/${service.id}`} aria-label={`Full details about ${service.title}`} style={{
                       marginTop: 'auto',
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      gap: '0.5rem', 
-                      color: 'var(--color-primary)', 
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: 'var(--color-primary)',
                       textDecoration: 'none',
                       fontWeight: '600',
                       fontSize: '0.9rem',

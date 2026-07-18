@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Clock, Star, Quote } from 'lucide-react';
 import ParticlesBackground from '../components/ParticlesBackground';
 import FAQ from '../components/FAQ';
+import SEO from '../components/SEO';
+import { buildArticleSchema, buildBreadcrumbSchema } from '../schema';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -80,7 +82,19 @@ const articles = [
 const Insights = () => {
   return (
     <motion.div initial="hidden" animate="visible" exit="hidden" variants={staggerContainer} style={{ backgroundColor: 'var(--color-off-white)', minHeight: '100vh', color: 'var(--color-navy-dark)' }}>
-      
+      <SEO
+        title="The Cosmic Journal | Insights from Psychic Charan"
+        description="Proprietary insights, astrological forecasts, and case studies on energetic sovereignty from the Psychic Charan collective."
+        canonical="/insights"
+        schema={[
+          buildArticleSchema(featuredArticle),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Insights', url: '/insights' },
+          ]),
+        ]}
+      />
+
       {/* Cinematic Header */}
       <section style={{ position: 'relative', padding: '5rem 0 4rem 0', overflow: 'hidden' }}>
         

@@ -8,6 +8,13 @@ import ZodiacWheel from '../components/ZodiacWheel';
 import AccordionGallery from '../components/AccordionGallery';
 import FAQ from '../components/FAQ';
 import QuantumProcess from '../components/QuantumProcess';
+import SEO from "../components/SEO";
+import {
+  buildLocalBusinessSchema,
+  buildOrganizationSchema,
+  buildPersonSchema,
+  buildWebsiteSchema,
+} from "../schema";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -67,6 +74,18 @@ const Home = () => {
 
   return (
     <motion.div initial="hidden" animate="visible" exit="hidden">
+      <SEO
+        title="Psychic Charan | Trusted Psychic Reader in Duluth, GA"
+        description="Professional psychic readings, tarot, astrology, spiritual healing, love guidance, chakra balancing, aura cleansing, and relationship advice from Psychic Charan."
+        keywords="psychic, psychic reader, tarot reading, astrologer, spiritual healer, chakra balancing, aura cleansing, duluth ga psychic"
+        canonical="/"
+        schema={[
+          buildLocalBusinessSchema(),
+          buildOrganizationSchema(),
+          buildPersonSchema(),
+          buildWebsiteSchema(),
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="section mobile-p-sm mobile-pt-sm" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '0' }}>

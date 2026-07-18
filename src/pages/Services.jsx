@@ -4,6 +4,8 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { categories, services } from '../data/services';
 import { ArrowRight, Sparkles, Crown } from 'lucide-react';
 import FAQ from '../components/FAQ';
+import SEO from '../components/SEO';
+import { buildBreadcrumbSchema } from '../schema';
 
 const Services = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -53,7 +55,18 @@ const Services = () => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ backgroundColor: 'var(--color-off-white)' }}>
-      
+      <SEO
+        title="Our Services | Psychic Charan"
+        description="Explore Psychic Charan's full range of elite spiritual consulting services — hex removal, karmic clearing, twin flame readings, chakra balancing, and more."
+        canonical="/services"
+        schema={[
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Services', url: '/services' },
+          ]),
+        ]}
+      />
+
       {/* Cinematic Header */}
       <section style={{ position: 'relative', padding: '5rem 0 4rem 0', backgroundColor: 'var(--color-off-white)', overflow: 'hidden' }}>
         {/* Dark overlay to ensure text readability against particles */}

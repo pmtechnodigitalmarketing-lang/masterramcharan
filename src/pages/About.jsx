@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Shield, Sparkles, Eye, Star, ChevronRight, Lock, Quote, Globe, Target } from 'lucide-react';
 import ParticlesBackground from '../components/ParticlesBackground';
 import FAQ from '../components/FAQ';
+import SEO from '../components/SEO';
+import { buildPersonSchema, buildBreadcrumbSchema } from '../schema';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -21,7 +23,22 @@ const staggerContainer = {
 const About = () => {
   return (
     <motion.div initial="hidden" animate="visible" exit="hidden" variants={staggerContainer} style={{ backgroundColor: 'var(--color-off-white)' }}>
-      
+      <SEO
+        title="About Us | The Psychic Charan Collective"
+        description="Discover the philosophy behind Psychic Charan — an exclusive spiritual agency combining ancient Vedic sciences with modern quantum healing to align your karmic path."
+        canonical="/about"
+        schema={[
+          buildPersonSchema({
+            description:
+              "Psychic Charan combines ancient Vedic sciences with modern quantum healing methodologies to restore clients' natural state of abundance and spiritual sovereignty.",
+          }),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'About', url: '/about' },
+          ]),
+        ]}
+      />
+
       {/* Cinematic Header */}
       <section style={{ position: 'relative', padding: '5rem 0 4rem 0', backgroundColor: 'var(--color-off-white)', overflow: 'hidden' }}>
         

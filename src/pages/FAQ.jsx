@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
+import SEO from '../components/SEO';
+import { buildFaqSchema, buildBreadcrumbSchema } from '../schema';
 
 const faqs = [
   {
@@ -30,7 +32,19 @@ const FAQ = () => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      
+      <SEO
+        title="Frequently Asked Questions | Psychic Charan"
+        description="Clarity on our process, practices, and the profound impact of spiritual sovereignty. Get answers about confidentiality, results timelines, and our ethical Vedic methods."
+        canonical="/faq"
+        schema={[
+          buildFaqSchema(faqs),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'FAQ', url: '/faq' },
+          ]),
+        ]}
+      />
+
       {/* Header */}
       <section className="section" style={{ background: 'rgba(0, 0, 0, 0.03)', paddingBottom: '2rem' }}>
         <div className="container" style={{ textAlign: 'center' }}>

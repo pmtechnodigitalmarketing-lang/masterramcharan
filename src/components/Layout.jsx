@@ -1,8 +1,9 @@
-import React, { useState } from 'react'; // Force HMR update
-import { Outlet, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Outlet, Link, NavLink } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Sparkles, MessageCircle, MapPin, Mail, Phone, ArrowRight, Menu, X } from 'lucide-react';
 import AnimatedMap from './AnimatedMap';
+import { business, mapsHref, telHref, whatsappHref, mailtoHref } from '../data/business';
 
 const Layout = () => {
   const { scrollYProgress, scrollY } = useScroll();
@@ -38,18 +39,18 @@ const Layout = () => {
       {/* Floating Contact Menu */}
       <div className="fab-stack" style={{ position: 'fixed', bottom: '2rem', right: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', zIndex: 999, alignItems: 'center' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-          <a href="/find-us" className="fab-action" style={{ background: '#E53935' }} title="Location">
+          <Link to="/find-us" className="fab-action" style={{ background: '#E53935' }} title="Location" aria-label="View our location">
             <MapPin size={22} color="white" />
-          </a>
-          <a href="mailto:Psychiccharan@gmail.com" className="fab-action" style={{ background: '#1E88E5' }} title="Email Us">
+          </Link>
+          <a href={mailtoHref} className="fab-action" style={{ background: '#1E88E5' }} title="Email Us" aria-label="Email us">
             <Mail size={22} color="white" />
           </a>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-          <a href="tel:+14704611807" className="fab-action" style={{ background: '#43A047' }} title="Call Us">
+          <a href={telHref} className="fab-action" style={{ background: '#43A047' }} title="Call Us" aria-label="Call us">
             <Phone size={22} color="white" />
           </a>
-          <a href="https://wa.me/14704520154" className="fab-action" style={{ background: '#25D366' }} title="WhatsApp">
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="fab-action" style={{ background: '#25D366' }} title="WhatsApp" aria-label="Message us on WhatsApp">
             <MessageCircle size={28} color="white" />
           </a>
         </div>
@@ -57,7 +58,7 @@ const Layout = () => {
 
       {/* Announcement Bar */}
       <div style={{ background: 'var(--color-off-white)', color: 'var(--color-navy-dark)', textAlign: 'center', padding: '0.6rem', fontSize: '0.9rem', fontWeight: '500', letterSpacing: '2px', textTransform: 'uppercase' }}>
-        <span style={{ color: 'var(--color-gold)' }}>★</span> Elite Spiritual Consulting for Europe <span style={{ color: 'var(--color-gold)' }}>★</span>
+        <span style={{ color: 'var(--color-gold)' }}>★</span> Elite Spiritual Consulting &mdash; Serving Clients Nationwide from Duluth, GA <span style={{ color: 'var(--color-gold)' }}>★</span>
       </div>
 
       {/* Navbar */}
@@ -81,14 +82,14 @@ const Layout = () => {
             <img src="/images/Psychic%20Charan%20Logo.webp" alt="Psychic Charan Logo" style={{ height: '60px', width: 'auto' }} />
           </Link>
           <ul className="mobile-hide" style={{ display: 'flex', gap: '3rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }}>
-            <li><Link to="/" className="nav-item text-link">Home</Link></li>
-            <li><Link to="/about" className="nav-item text-link">Who We Are</Link></li>
-            <li><Link to="/services" className="nav-item text-link">Services</Link></li>
-            <li><Link to="/find-us" className="nav-item text-link">Find Us</Link></li>
-            <li><Link to="/insights" className="nav-item text-link">Insights</Link></li>
+            <li><NavLink to="/" end className="nav-item text-link">Home</NavLink></li>
+            <li><NavLink to="/about" className="nav-item text-link">Who We Are</NavLink></li>
+            <li><NavLink to="/services" className="nav-item text-link">Services</NavLink></li>
+            <li><NavLink to="/find-us" className="nav-item text-link">Find Us</NavLink></li>
+            <li><NavLink to="/insights" className="nav-item text-link">Insights</NavLink></li>
           </ul>
           <div className="mobile-hide" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <a href="tel:+14704611807" className="btn btn-secondary" style={{ padding: '0.7rem 1.5rem', borderRadius: 'var(--radius-pill)', display: 'flex', gap: '0.5rem', alignItems: 'center', color: 'var(--color-navy-dark)', border: '1px solid var(--color-orange)' }}>
+            <a href={telHref} className="btn btn-secondary" style={{ padding: '0.7rem 1.5rem', borderRadius: 'var(--radius-pill)', display: 'flex', gap: '0.5rem', alignItems: 'center', color: 'var(--color-navy-dark)', border: '1px solid var(--color-orange)' }}>
               <Phone size={18} color="var(--color-orange)" /> Call Now
             </a>
             <Link to="/contact" className="btn btn-primary btn-pulse" style={{ padding: '0.8rem 1.8rem', borderRadius: 'var(--radius-pill)' }}>
@@ -114,14 +115,14 @@ const Layout = () => {
             <button onClick={() => setIsMobileMenuOpen(false)} style={{ position: 'absolute', top: '2rem', right: '2rem', background: 'transparent', border: 'none', color: 'var(--color-navy-dark)' }}>
               <X size={40} />
             </button>
-            <Link to="/" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            <Link to="/about" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Who We Are</Link>
-            <Link to="/services" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
-            <Link to="/find-us" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Find Us</Link>
-            <Link to="/insights" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Insights</Link>
+            <NavLink to="/" end className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
+            <NavLink to="/about" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Who We Are</NavLink>
+            <NavLink to="/services" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Services</NavLink>
+            <NavLink to="/find-us" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Find Us</NavLink>
+            <NavLink to="/insights" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Insights</NavLink>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '2rem', width: '100%', maxWidth: '300px' }}>
               <Link to="/contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ padding: '1rem', flex: 1, justifyContent: 'center' }}>Book Consultation</Link>
-              <a href="tel:+14704611807" className="btn btn-secondary" style={{ padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', width: '52px', height: '52px', flexShrink: 0 }}>
+              <a href={telHref} className="btn btn-secondary" aria-label="Call us" style={{ padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', width: '52px', height: '52px', flexShrink: 0 }}>
                 <Phone size={22} />
               </a>
             </div>
@@ -162,15 +163,15 @@ const Layout = () => {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', padding: 0, marginBottom: '2rem' }}>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem', color: 'var(--color-light-gray)' }}>
                 <Phone size={16} color="var(--color-gold)" style={{ marginTop: '0.1rem', flexShrink: 0 }} />
-                <a href="tel:+14704611807" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>+1(470) 461-1807</a>
+                <a href={telHref} style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>{business.telephoneDisplay}</a>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem', color: 'var(--color-light-gray)' }}>
                 <Mail size={16} color="var(--color-gold)" style={{ marginTop: '0.1rem', flexShrink: 0 }} />
-                <a href="mailto:Psychiccharan@gmail.com" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>Psychiccharan@gmail.com</a>
+                <a href={mailtoHref} style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>{business.email}</a>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem', color: 'var(--color-light-gray)' }}>
                 <MapPin size={16} color="var(--color-gold)" style={{ marginTop: '0.1rem', flexShrink: 0 }} />
-                <a href="https://maps.google.com/?q=702+Twin+Oaks+Dr+apt+2,+Decatur,+GA+30030" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>3740 Club Dr #2209, Duluth, GA 30096</a>
+                <a href={mapsHref} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'inherit'}>{business.addressDisplay}</a>
               </li>
             </ul>
 
@@ -192,6 +193,8 @@ const Layout = () => {
                   <li><Link to="/services" onClick={() => window.scrollTo(0,0)} style={{ color: 'var(--color-light-gray)', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'var(--color-light-gray)'}>Consulting Services</Link></li>
                   <li><Link to="/insights" onClick={() => window.scrollTo(0,0)} style={{ color: 'var(--color-light-gray)', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'var(--color-light-gray)'}>Cosmic Journal</Link></li>
                   <li><Link to="/find-us" onClick={() => window.scrollTo(0,0)} style={{ color: 'var(--color-light-gray)', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'var(--color-light-gray)'}>Global Sanctuaries</Link></li>
+                  <li><Link to="/faq" onClick={() => window.scrollTo(0,0)} style={{ color: 'var(--color-light-gray)', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'var(--color-light-gray)'}>FAQ</Link></li>
+                  <li><Link to="/contact" onClick={() => window.scrollTo(0,0)} style={{ color: 'var(--color-light-gray)', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'var(--color-light-gray)'}>Contact / Book</Link></li>
                 </ul>
               </div>
 
@@ -209,7 +212,7 @@ const Layout = () => {
             {/* Wide Footer Map */}
             <div style={{ width: '100%', height: '180px', borderRadius: 'var(--radius-md)', overflow: 'hidden', position: 'relative', border: '1px solid rgba(0, 0, 0, 0.05)', marginTop: 'auto' }}>
               <div style={{ position: 'absolute', inset: 0, opacity: 0.9 }}>
-                <AnimatedMap address="3740 Club Dr #2209, Duluth, GA 30096" style={{ width: '100%', height: '100%' }} />
+                <AnimatedMap address={business.addressDisplay} style={{ width: '100%', height: '100%' }} />
               </div>
             </div>
           </div>
@@ -234,7 +237,7 @@ const Layout = () => {
         {/* Bottom Bar */}
         <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.05)', background: 'rgba(0,0,0,0.02)' }}>
           <div className="container mobile-col mobile-text-center mobile-gap-sm" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0', fontSize: '0.85rem', color: 'rgba(0,0,0,0.6)' }}>
-            <p style={{ margin: 0 }}>&copy; 2017 Psychic Charan Agency. Absolute Discretion Assured.</p>
+            <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} {business.legalName}. Absolute Discretion Assured.</p>
             <div style={{ display: 'flex', gap: '2rem' }}>
               <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>NDA Policy</span>
               <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>Terms of Engagement</span>

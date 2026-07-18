@@ -3,6 +3,8 @@ import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { services } from '../data/services';
 import { CheckCircle2, ArrowLeft, ShieldCheck, Star, ArrowRight, ChevronDown, HelpCircle, Users, Quote, Phone, MessageCircle } from 'lucide-react';
+import SEO from '../components/SEO';
+import { buildServiceSchema, buildFaqSchema, buildBreadcrumbSchema } from '../schema';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +43,23 @@ const ServiceDetails = () => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ backgroundColor: 'var(--color-off-white)', color: 'var(--color-navy-dark)' }}>
-      
+      <SEO
+        title={`${service.title} | Psychic Charan`}
+        description={service.shortDescription}
+        canonical={`/services/${service.id}`}
+        image={service.image}
+        imageAlt={service.title}
+        schema={[
+          buildServiceSchema(service),
+          buildFaqSchema(service.faqs),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: service.title, url: `/services/${service.id}` },
+          ]),
+        ]}
+      />
+
       {/* Split Layout Hero */}
       <section className="section mobile-p-sm" style={{ padding: '6rem 0 2rem 0', background: 'linear-gradient(135deg, #f8f7fa 0%, #ffffff 100%)' }}>
         <div className="container mobile-grid-1" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'center' }}>

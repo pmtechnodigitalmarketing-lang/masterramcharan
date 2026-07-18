@@ -3,10 +3,24 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Shield, Lock, AlertTriangle, ArrowRight, FileCheck, Search, Video } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import AnimatedMap from '../components/AnimatedMap';
+import SEO from '../components/SEO';
+import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '../schema';
 
 const Contact = () => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      <SEO
+        title="Contact Us | Psychic Charan"
+        description="Reach Psychic Charan's private concierge to schedule your diagnostic audit or discuss corporate protection services. Call, email, or WhatsApp us today."
+        canonical="/contact"
+        schema={[
+          buildLocalBusinessSchema(),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Contact', url: '/contact' },
+          ]),
+        ]}
+      />
 
       {/* Header */}
       <section className="section" style={{ background: 'rgba(0, 0, 0, 0.03)', paddingBottom: '2rem' }}>

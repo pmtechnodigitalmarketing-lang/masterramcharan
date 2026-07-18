@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Lock, Eye, Plane, Globe, ArrowRight } from 'lucide-react';
+import { states, slugify } from '../data/locations';
+import SEO from '../components/SEO';
+import { buildBreadcrumbSchema } from '../schema';
 
 const staggerContainer = {
     hidden: { opacity: 0 },
@@ -19,7 +22,18 @@ const fadeInUp = {
 const FindUs = () => {
   return (
     <motion.div initial="hidden" animate="visible" exit="hidden" style={{ minHeight: '100vh', backgroundColor: 'var(--color-off-white)' }}>
-      
+      <SEO
+        title="Find Us | Global Sanctuaries | Psychic Charan"
+        description="Our physical sanctuaries are designed using exact Vedic architectural principles. Discover locations nationwide, plus elite remote and distant clearing sessions."
+        canonical="/find-us"
+        schema={[
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Find Us', url: '/find-us' },
+          ]),
+        ]}
+      />
+
       {/* Cinematic Header */}
       <section style={{ position: 'relative', padding: '5rem 0 4rem 0', overflow: 'hidden' }}>
         
@@ -45,24 +59,10 @@ const FindUs = () => {
             gap: '1.2rem',
             textAlign: 'center'
           }}>
-            {[
-              { name: "Alabama", code: "al" }, { name: "Alaska", code: "ak" }, { name: "Arizona", code: "az" }, { name: "Arkansas", code: "ar" },
-              { name: "California", code: "ca" }, { name: "Colorado", code: "co" }, { name: "Connecticut", code: "ct" }, { name: "Delaware", code: "de" },
-              { name: "Florida", code: "fl" }, { name: "Georgia", code: "ga" }, { name: "Hawaii", code: "hi" }, { name: "Idaho", code: "id" },
-              { name: "Illinois", code: "il" }, { name: "Indiana", code: "in" }, { name: "Iowa", code: "ia" }, { name: "Kansas", code: "ks" },
-              { name: "Kentucky", code: "ky" }, { name: "Louisiana", code: "la" }, { name: "Maine", code: "me" }, { name: "Maryland", code: "md" },
-              { name: "Massachusetts", code: "ma" }, { name: "Michigan", code: "mi" }, { name: "Minnesota", code: "mn" }, { name: "Mississippi", code: "ms" },
-              { name: "Missouri", code: "mo" }, { name: "Montana", code: "mt" }, { name: "Nebraska", code: "ne" }, { name: "Nevada", code: "nv" },
-              { name: "New Hampshire", code: "nh" }, { name: "New Jersey", code: "nj" }, { name: "New Mexico", code: "nm" }, { name: "New York", code: "ny" },
-              { name: "North Carolina", code: "nc" }, { name: "North Dakota", code: "nd" }, { name: "Ohio", code: "oh" }, { name: "Oklahoma", code: "ok" },
-              { name: "Oregon", code: "or" }, { name: "Pennsylvania", code: "pa" }, { name: "Rhode Island", code: "ri" }, { name: "South Carolina", code: "sc" },
-              { name: "South Dakota", code: "sd" }, { name: "Tennessee", code: "tn" }, { name: "Texas", code: "tx" }, { name: "Utah", code: "ut" },
-              { name: "Vermont", code: "vt" }, { name: "Virginia", code: "va" }, { name: "Washington", code: "wa" }, { name: "West Virginia", code: "wv" },
-              { name: "Wisconsin", code: "wi" }, { name: "Wyoming", code: "wy" }
-            ].map((state, i) => (
-              <Link 
-                key={i} 
-                to={`/location/${state.name.toLowerCase().replace(/\s+/g, '-')}`} 
+            {states.map((state, i) => (
+              <Link
+                key={i}
+                to={`/location/${slugify(state.name)}`}
                 style={{ textDecoration: 'none' }}
               >
                 <motion.div variants={fadeInUp} style={{
