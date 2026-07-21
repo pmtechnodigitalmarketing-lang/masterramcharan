@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+﻿import React from 'react';
+import { m as motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Lock, Eye, Plane, Globe, ArrowRight } from 'lucide-react';
 import { states, slugify } from '../data/locations';

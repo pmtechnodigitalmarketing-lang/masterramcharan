@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+﻿import React, { useState } from 'react';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 

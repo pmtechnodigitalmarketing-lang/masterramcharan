@@ -1,5 +1,5 @@
-import React from 'react'; // Force HMR update
-import { motion } from 'framer-motion';
+﻿import React from 'react'; // Force HMR update
+import { m as motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Shield, Lock, AlertTriangle, ArrowRight, FileCheck, Search, Video } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import AnimatedMap from '../components/AnimatedMap';

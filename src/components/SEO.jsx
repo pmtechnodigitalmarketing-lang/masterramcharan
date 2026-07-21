@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+﻿import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { SEO_DEFAULTS } from "../data/seo";
 
@@ -11,7 +11,7 @@ const toAbsoluteUrl = (path) => {
 /**
  * Reusable enterprise SEO component. Renders meta tags, Open Graph, Twitter
  * Cards, and (optionally) one or more JSON-LD schema objects via the
- * `schema` prop — pass an array of objects produced by the builders in
+ * `schema` prop â€” pass an array of objects produced by the builders in
  * `src/schema/*.js` (no `@context` needed on each, it's added here).
  */
 const SEO = ({

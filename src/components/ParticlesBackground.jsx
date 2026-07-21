@@ -1,4 +1,4 @@
-import Particles, { ParticlesProvider } from "@tsparticles/react";
+﻿import Particles, { ParticlesProvider } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useState, useEffect } from "react";
 

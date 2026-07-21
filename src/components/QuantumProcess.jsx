@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+﻿import React, { useState, useEffect } from 'react';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import { Eye, Compass, Crown } from 'lucide-react';
 
 const steps = [

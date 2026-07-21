@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+﻿import React, { useState } from 'react';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import { Link, useSearchParams } from 'react-router-dom';
 import { categories, services } from '../data/services';
 import { ArrowRight, Sparkles, Crown } from 'lucide-react';
@@ -57,7 +57,7 @@ const Services = () => {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ backgroundColor: 'var(--color-off-white)' }}>
       <SEO
         title="Our Services | Psychic Charan"
-        description="Explore Psychic Charan's full range of elite spiritual consulting services — hex removal, karmic clearing, twin flame readings, chakra balancing, and more."
+        description="Explore Psychic Charan's full range of elite spiritual consulting services â€” hex removal, karmic clearing, twin flame readings, chakra balancing, and more."
         canonical="/services"
         schema={[
           buildBreadcrumbSchema([
@@ -310,7 +310,7 @@ const Services = () => {
                           <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--color-text-muted)' }}>
                             {matchmakerData[matchmakerSelection]?.benefits.map((benefit, i) => (
                               <li key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                                <span style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>✓</span> {benefit}
+                                <span style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>âœ“</span> {benefit}
                               </li>
                             ))}
                           </ul>

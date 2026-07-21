@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+﻿import React, { useState } from 'react';
+import { m as motion } from 'framer-motion';
 
 const AnimatedMap = ({ address, style }) => {
   const [isHovered, setIsHovered] = useState(false);

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { m as motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Sparkles, MessageCircle, MapPin, Mail, Phone, ArrowRight, Menu, X } from 'lucide-react';
 import AnimatedMap from './AnimatedMap';
 import { business, mapsHref, telHref, whatsappHref, mailtoHref } from '../data/business';
@@ -58,7 +58,7 @@ const Layout = () => {
 
       {/* Announcement Bar */}
       <div style={{ background: 'var(--color-off-white)', color: 'var(--color-navy-dark)', textAlign: 'center', padding: '0.6rem', fontSize: '0.9rem', fontWeight: '500', letterSpacing: '2px', textTransform: 'uppercase' }}>
-        <span style={{ color: 'var(--color-gold)' }}>★</span> Elite Spiritual Consulting &mdash; Serving Clients Nationwide from Duluth, GA <span style={{ color: 'var(--color-gold)' }}>★</span>
+        <span style={{ color: 'var(--color-gold)' }}>â˜…</span> Elite Spiritual Consulting &mdash; Serving Clients Nationwide from Duluth, GA <span style={{ color: 'var(--color-gold)' }}>â˜…</span>
       </div>
 
       {/* Navbar */}

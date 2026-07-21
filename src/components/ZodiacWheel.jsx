@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { m as motion } from 'framer-motion';
 import { Star, Moon, Sun, Compass } from 'lucide-react';
 
 const ZodiacWheel = () => {

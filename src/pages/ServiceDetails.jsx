@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import { services } from '../data/services';
 import { CheckCircle2, ArrowLeft, ShieldCheck, Star, ArrowRight, ChevronDown, HelpCircle, Users, Quote, Phone, MessageCircle } from 'lucide-react';
 import SEO from '../components/SEO';

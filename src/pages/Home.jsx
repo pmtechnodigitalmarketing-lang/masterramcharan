@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Heart, Star, Moon, Crown, ArrowRight, CheckCircle2, MapPin, Eye, Compass, Award, Globe, TrendingUp, ShieldCheck, X } from 'lucide-react';
 import { categories, services } from '../data/services';
@@ -7,6 +7,7 @@ const ZodiacWheel = React.lazy(() => import('../components/ZodiacWheel'));
 const AccordionGallery = React.lazy(() => import('../components/AccordionGallery'));
 const FAQ = React.lazy(() => import('../components/FAQ'));
 const QuantumProcess = React.lazy(() => import('../components/QuantumProcess'));
+import LazyComponent from '../components/LazyComponent';
 import SEO from "../components/SEO";
 import {
   buildLocalBusinessSchema,
@@ -268,9 +269,11 @@ const Home = () => {
               transition={{ duration: 1 }}
               style={{ flex: '0 0 auto', padding: '1rem', display: 'flex', justifyContent: 'center' }}
             >
-              <React.Suspense fallback={<div style={{height: '300px'}}></div>}>
-                <ZodiacWheel />
-              </React.Suspense>
+              <LazyComponent fallbackHeight="300px">
+                <React.Suspense fallback={<div style={{height: '300px'}}></div>}>
+                  <ZodiacWheel />
+                </React.Suspense>
+              </LazyComponent>
             </motion.div>
 
             {/* Right Column */}
@@ -308,9 +311,11 @@ const Home = () => {
             Exclusive Consultations In
           </motion.div>
           <motion.div variants={fadeInUp}>
-            <React.Suspense fallback={<div style={{height: '400px'}}></div>}>
-              <AccordionGallery />
-            </React.Suspense>
+            <LazyComponent fallbackHeight="400px">
+              <React.Suspense fallback={<div style={{height: '400px'}}></div>}>
+                <AccordionGallery />
+              </React.Suspense>
+            </LazyComponent>
           </motion.div>
         </div>
       </section>
@@ -416,9 +421,11 @@ const Home = () => {
       </section>
 
       {/* The Quantum Process Section */}
-      <React.Suspense fallback={<div style={{height: '600px'}}></div>}>
-        <QuantumProcess />
-      </React.Suspense>
+      <LazyComponent fallbackHeight="600px">
+        <React.Suspense fallback={<div style={{height: '600px'}}></div>}>
+          <QuantumProcess />
+        </React.Suspense>
+      </LazyComponent>
       {/* VIP Testimonials */}
       <section className="section" style={{ backgroundColor: 'var(--color-off-white)', padding: '0 0 8rem 0', backgroundImage: 'radial-gradient(circle at top, rgba(21, 145, 220,0.15) 0%, transparent 60%)' }}>
         <div className="container">
@@ -506,9 +513,11 @@ const Home = () => {
             Frequently Asked Questions
           </motion.h2>
           <motion.div variants={fadeInUp}>
-            <React.Suspense fallback={<div style={{height: '300px'}}></div>}>
-              <FAQ />
-            </React.Suspense>
+            <LazyComponent fallbackHeight="300px">
+              <React.Suspense fallback={<div style={{height: '300px'}}></div>}>
+                <FAQ />
+              </React.Suspense>
+            </LazyComponent>
           </motion.div>
         </div>
       </section>

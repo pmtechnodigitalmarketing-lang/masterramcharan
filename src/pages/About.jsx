@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+﻿import React from 'react';
+import { m as motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Sparkles, Eye, Star, ChevronRight, Lock, Quote, Globe, Target } from 'lucide-react';
 import FAQ from '../components/FAQ';
@@ -24,7 +24,7 @@ const About = () => {
     <motion.div initial="hidden" animate="visible" exit="hidden" variants={staggerContainer} style={{ backgroundColor: 'var(--color-off-white)' }}>
       <SEO
         title="About Us | The Psychic Charan Collective"
-        description="Discover the philosophy behind Psychic Charan — an exclusive spiritual agency combining ancient Vedic sciences with modern quantum healing to align your karmic path."
+        description="Discover the philosophy behind Psychic Charan â€” an exclusive spiritual agency combining ancient Vedic sciences with modern quantum healing to align your karmic path."
         canonical="/about"
         schema={[
           buildPersonSchema({

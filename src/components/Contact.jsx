@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Mail, Phone, Clock } from 'lucide-react';
 

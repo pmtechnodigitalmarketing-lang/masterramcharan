@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { services } from '../data/services';
 import SEO from '../components/SEO';

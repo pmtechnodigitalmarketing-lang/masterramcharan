@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+﻿import React, { useState } from 'react';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import SEO from '../components/SEO';
 import { buildFaqSchema, buildBreadcrumbSchema } from '../schema';
