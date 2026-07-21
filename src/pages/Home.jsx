@@ -72,7 +72,7 @@ const Home = () => {
   }, []);
 
   return (
-    <motion.div initial="hidden" animate="visible" exit="hidden">
+    <div className="fade-in-page">
       <SEO
         title="Psychic Charan | Trusted Psychic Reader in Duluth, GA"
         description="Professional psychic readings, tarot, astrology, spiritual healing, love guidance, chakra balancing, aura cleansing, and relationship advice from Psychic Charan."
@@ -92,40 +92,51 @@ const Home = () => {
           <motion.div variants={fadeInUp} style={{ flex: 1, width: '100%' }}>
             <h1 className="mobile-h1" style={{ fontSize: '4.5rem', marginTop: '2.5rem', marginBottom: '2rem', minHeight: '140px', lineHeight: '1.2' }}>
               Expert <br />
-              <div style={{ display: 'flex', minHeight: '180px', alignItems: 'flex-start' }}>
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={currentText}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
+              <div style={{ display: 'flex', minHeight: '180px', alignItems: 'flex-start', position: 'relative' }}>
+                {heroTexts.map((item, index) => (
+                  <span
+                    key={index}
                     style={{
-                      background: heroTexts[currentText].color,
+                      position: index === 0 ? 'relative' : 'absolute',
+                      top: 0,
+                      left: 0,
+                      background: item.color,
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
-                      display: 'inline-block'
+                      display: 'inline-block',
+                      opacity: currentText === index ? 1 : 0,
+                      transform: currentText === index ? 'translateY(0)' : 'translateY(20px)',
+                      transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+                      pointerEvents: currentText === index ? 'auto' : 'none'
                     }}
                   >
-                    {heroTexts[currentText].text}
-                  </motion.span>
-                </AnimatePresence>
+                    {item.text}
+                  </span>
+                ))}
               </div>
             </h1>
-            <div style={{ display: 'flex', minHeight: '150px', marginBottom: '2rem', alignItems: 'flex-start' }}>
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={currentText}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  style={{ fontSize: '1.25rem', maxWidth: '600px', margin: 0, lineHeight: '1.6' }}
+            <div style={{ display: 'flex', minHeight: '150px', marginBottom: '2rem', alignItems: 'flex-start', position: 'relative' }}>
+              {heroTexts.map((item, index) => (
+                <p
+                  key={index}
+                  style={{ 
+                    position: index === 0 ? 'relative' : 'absolute',
+                    top: 0,
+                    left: 0,
+                    fontSize: '1.25rem', 
+                    maxWidth: '600px', 
+                    margin: 0, 
+                    lineHeight: '1.6',
+                    opacity: currentText === index ? 1 : 0,
+                    transform: currentText === index ? 'translateX(0)' : 'translateX(-20px)',
+                    transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+                    pointerEvents: currentText === index ? 'auto' : 'none'
+                  }}
                 >
-                  {heroTexts[currentText].subtext}
-                </motion.p>
-              </AnimatePresence>
+                  {item.subtext}
+                </p>
+              ))}
             </div>
             <div className="mobile-col" style={{ display: 'flex', gap: '1rem' }}>
               <Link to="/services" className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
@@ -153,29 +164,32 @@ const Home = () => {
               
               {/* Floating Image corresponding to text */}
               <div style={{ position: 'absolute', inset: 0 }}>
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentText}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+                {heroTexts.map((item, index) => (
+                  <div
+                    key={index}
+                    style={{ 
+                      position: 'absolute', 
+                      inset: 0, 
+                      width: '100%', 
+                      height: '100%',
+                      opacity: currentText === index ? 1 : 0,
+                      transition: 'opacity 0.6s ease-out'
+                    }}
                   >
                     <img
-                      src={heroTexts[currentText].image}
-                      alt={heroTexts[currentText].text}
-                      fetchPriority="high"
-                      loading="eager"
-                      className="hero-img-animate"
+                      src={item.image}
+                      alt={item.text}
+                      fetchPriority={index === 0 ? "high" : "auto"}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      className={index === 0 ? "hero-img-animate" : ""}
                       style={{
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover'
                       }}
                     />
-                  </motion.div>
-                </AnimatePresence>
+                  </div>
+                ))}
               </div>
 
               {/* Floating Glass Card */}
@@ -641,7 +655,7 @@ const Home = () => {
         )}
       </AnimatePresence>
 
-    </motion.div>
+    </div>
   );
 };
 
