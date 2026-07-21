@@ -1,41 +1,28 @@
-﻿import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
-import { m as motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Sparkles, MessageCircle, MapPin, Mail, Phone, ArrowRight, Menu, X } from 'lucide-react';
 import AnimatedMap from './AnimatedMap';
 import { business, mapsHref, telHref, whatsappHref, mailtoHref } from '../data/business';
 
 const Layout = () => {
-  const { scrollYProgress, scrollY } = useScroll();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Dynamic Nav Styling on Scroll
-  const navBackground = useTransform(
-    scrollY,
-    [0, 50],
-    ['rgba(255, 255, 255, 0.4)', 'rgba(255, 255, 255, 0.85)']
-  );
-
-  const navShadow = useTransform(
-    scrollY,
-    [0, 50],
-    ['0 4px 6px -1px rgba(0, 0, 0, 0.0)', '0 20px 25px -5px rgba(21, 145, 220, 0.15)']
-  );
-
-  const navPadding = useTransform(
-    scrollY,
-    [0, 50],
-    ['0.8rem 2rem', '0.5rem 1.5rem']
-  );
+  const navBackground = isScrolled ? 'rgba(255, 255, 255, 0.85)' : 'rgba(255, 255, 255, 0.4)';
+  const navShadow = isScrolled ? '0 20px 25px -5px rgba(21, 145, 220, 0.15)' : '0 4px 6px -1px rgba(0, 0, 0, 0.0)';
+  const navPadding = isScrolled ? '0.5rem 1.5rem' : '0.8rem 2rem';
 
   return (
     <>
-      {/* Scroll Progress Bar */}
-      <motion.div
-        className="scroll-progress"
-        style={{ scaleX: scrollYProgress }}
-      />
-
       {/* Floating Contact Menu */}
       <div className="fab-stack" style={{ position: 'fixed', bottom: '2rem', right: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', zIndex: 999, alignItems: 'center' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
@@ -58,12 +45,12 @@ const Layout = () => {
 
       {/* Announcement Bar */}
       <div style={{ background: 'var(--color-off-white)', color: 'var(--color-navy-dark)', textAlign: 'center', padding: '0.6rem', fontSize: '0.9rem', fontWeight: '500', letterSpacing: '2px', textTransform: 'uppercase' }}>
-        <span style={{ color: 'var(--color-gold)' }}>â˜…</span> Elite Spiritual Consulting &mdash; Serving Clients Nationwide from Duluth, GA <span style={{ color: 'var(--color-gold)' }}>â˜…</span>
+        <span style={{ color: 'var(--color-gold)' }}>★</span> Elite Spiritual Consulting &mdash; Serving Clients Nationwide from Duluth, GA <span style={{ color: 'var(--color-gold)' }}>★</span>
       </div>
 
       {/* Navbar */}
       <div style={{ display: 'flex', justifyContent: 'center', position: 'sticky', top: '1.5rem', zIndex: 100, padding: '0 1rem' }}>
-        <motion.nav
+        <nav
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -75,7 +62,8 @@ const Layout = () => {
             boxShadow: navShadow,
             padding: navPadding,
             backdropFilter: 'blur(16px)',
-            border: '1px solid rgba(21, 145, 220, 0.2)'
+            border: '1px solid rgba(21, 145, 220, 0.2)',
+            transition: 'all 0.3s ease'
           }}
         >
           <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
@@ -101,43 +89,39 @@ const Layout = () => {
               <Menu size={32} />
             </button>
           </div>
-        </motion.nav>
+        </nav>
       </div>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div 
-            className="mobile-menu-overlay"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-          >
-            <button onClick={() => setIsMobileMenuOpen(false)} style={{ position: 'absolute', top: '2rem', right: '2rem', background: 'transparent', border: 'none', color: 'var(--color-navy-dark)' }}>
-              <X size={40} />
-            </button>
-            <NavLink to="/" end className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
-            <NavLink to="/about" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Who We Are</NavLink>
-            <NavLink to="/services" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Services</NavLink>
-            <NavLink to="/find-us" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Find Us</NavLink>
-            <NavLink to="/insights" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Insights</NavLink>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '2rem', width: '100%', maxWidth: '300px' }}>
-              <Link to="/contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ padding: '1rem', flex: 1, justifyContent: 'center' }}>Book Consultation</Link>
-              <a href={telHref} className="btn btn-secondary" aria-label="Call us" style={{ padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', width: '52px', height: '52px', flexShrink: 0 }}>
-                <Phone size={22} />
-              </a>
-            </div>
+      {isMobileMenuOpen && (
+        <div 
+          className="mobile-menu-overlay hero-fade-in-up"
+          style={{ animationDuration: '0.3s' }}
+        >
+          <button onClick={() => setIsMobileMenuOpen(false)} style={{ position: 'absolute', top: '2rem', right: '2rem', background: 'transparent', border: 'none', color: 'var(--color-navy-dark)' }}>
+            <X size={40} />
+          </button>
+          <NavLink to="/" end className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
+          <NavLink to="/about" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Who We Are</NavLink>
+          <NavLink to="/services" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Services</NavLink>
+          <NavLink to="/find-us" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Find Us</NavLink>
+          <NavLink to="/insights" className="mobile-menu-link" onClick={() => setIsMobileMenuOpen(false)}>Insights</NavLink>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '2rem', width: '100%', maxWidth: '300px' }}>
+            <Link to="/contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ padding: '1rem', flex: 1, justifyContent: 'center' }}>Book Consultation</Link>
+            <a href={telHref} className="btn btn-secondary" aria-label="Call us" style={{ padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', width: '52px', height: '52px', flexShrink: 0 }}>
+              <Phone size={22} />
+            </a>
+          </div>
 
-            <div style={{ display: 'flex', gap: '2rem', marginTop: '3rem', color: 'var(--color-navy-dark)', alignItems: 'center' }}>
-              <a href="#" style={{ color: 'inherit' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-              <a href="#" style={{ color: 'inherit' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-              <a href="#" style={{ color: 'inherit' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
-              <a href="#" style={{ color: 'inherit' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.17 1 12 1 12s0 3.83.46 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.83 23 12 23 12s0-3.83-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg></a>
-              <div style={{ width: '1px', height: '24px', background: 'rgba(0,0,0,0.2)' }}></div>
-              <Link to="/find-us" onClick={() => setIsMobileMenuOpen(false)} style={{ color: 'inherit' }}><MapPin size={24} /></Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <div style={{ display: 'flex', gap: '2rem', marginTop: '3rem', color: 'var(--color-navy-dark)', alignItems: 'center' }}>
+            <a href="#" style={{ color: 'inherit' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#" style={{ color: 'inherit' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" style={{ color: 'inherit' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+            <a href="#" style={{ color: 'inherit' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.17 1 12 1 12s0 3.83.46 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.83 23 12 23 12s0-3.83-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg></a>
+            <div style={{ width: '1px', height: '24px', background: 'rgba(0,0,0,0.2)' }}></div>
+            <Link to="/find-us" onClick={() => setIsMobileMenuOpen(false)} style={{ color: 'inherit' }}><MapPin size={24} /></Link>
+          </div>
+        </div>
+      )}
 
       {/* Page Content */}
       <main style={{ minHeight: '80vh' }}>
