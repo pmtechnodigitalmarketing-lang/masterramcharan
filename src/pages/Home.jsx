@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Heart, Star, Moon, Crown, ArrowRight, CheckCircle2, MapPin, Eye, Compass, Award, Globe, TrendingUp, ShieldCheck, X } from 'lucide-react';
 import { categories, services } from '../data/services';
-import ZodiacWheel from '../components/ZodiacWheel';
-import AccordionGallery from '../components/AccordionGallery';
-import FAQ from '../components/FAQ';
-import QuantumProcess from '../components/QuantumProcess';
+const ZodiacWheel = React.lazy(() => import('../components/ZodiacWheel'));
+const AccordionGallery = React.lazy(() => import('../components/AccordionGallery'));
+const FAQ = React.lazy(() => import('../components/FAQ'));
+const QuantumProcess = React.lazy(() => import('../components/QuantumProcess'));
 import SEO from "../components/SEO";
 import {
   buildLocalBusinessSchema,
@@ -255,7 +255,9 @@ const Home = () => {
               transition={{ duration: 1 }}
               style={{ flex: '0 0 auto', padding: '1rem', display: 'flex', justifyContent: 'center' }}
             >
-              <ZodiacWheel />
+              <React.Suspense fallback={<div style={{height: '300px'}}></div>}>
+                <ZodiacWheel />
+              </React.Suspense>
             </motion.div>
 
             {/* Right Column */}
@@ -293,7 +295,9 @@ const Home = () => {
             Exclusive Consultations In
           </motion.div>
           <motion.div variants={fadeInUp}>
-            <AccordionGallery />
+            <React.Suspense fallback={<div style={{height: '400px'}}></div>}>
+              <AccordionGallery />
+            </React.Suspense>
           </motion.div>
         </div>
       </section>
@@ -399,7 +403,9 @@ const Home = () => {
       </section>
 
       {/* The Quantum Process Section */}
-      <QuantumProcess />
+      <React.Suspense fallback={<div style={{height: '600px'}}></div>}>
+        <QuantumProcess />
+      </React.Suspense>
       {/* VIP Testimonials */}
       <section className="section" style={{ backgroundColor: 'var(--color-off-white)', padding: '0 0 8rem 0', backgroundImage: 'radial-gradient(circle at top, rgba(21, 145, 220,0.15) 0%, transparent 60%)' }}>
         <div className="container">
@@ -487,7 +493,9 @@ const Home = () => {
             Frequently Asked Questions
           </motion.h2>
           <motion.div variants={fadeInUp}>
-            <FAQ />
+            <React.Suspense fallback={<div style={{height: '300px'}}></div>}>
+              <FAQ />
+            </React.Suspense>
           </motion.div>
         </div>
       </section>
