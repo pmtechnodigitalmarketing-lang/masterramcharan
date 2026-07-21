@@ -166,6 +166,8 @@ const Home = () => {
                     <motion.img
                       src={heroTexts[currentText].image}
                       alt={heroTexts[currentText].text}
+                      fetchPriority="high"
+                      loading="eager"
                       animate={{ scale: [1, 1.05, 1] }}
                       transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
                       style={{
@@ -459,6 +461,9 @@ const Home = () => {
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.author} 
+                    loading="lazy"
+                    width="50"
+                    height="50"
                     style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--color-gold)' }}
                   />
                   <div>
@@ -592,7 +597,7 @@ const Home = () => {
                 </button>
 
                 <div style={{ position: 'relative', height: '300px', flexShrink: 0, backgroundColor: 'var(--color-navy-dark)' }}>
-                  <img src={selectedService.image} alt={selectedService.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                  <img src={selectedService.image} alt={selectedService.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 </div>
                 <div style={{ padding: '2rem 2rem 0 2rem' }}>
                   <h3 style={{ color: 'var(--color-navy-dark)', fontSize: '2.5rem', margin: 0 }}>

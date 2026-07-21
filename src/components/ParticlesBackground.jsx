@@ -1,7 +1,19 @@
 import Particles, { ParticlesProvider } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import { useState, useEffect } from "react";
 
 const ParticlesBackground = () => {
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+    useEffect(() => {
+        const checkIsDesktop = () => setIsDesktop(window.innerWidth >= 768);
+        checkIsDesktop();
+        window.addEventListener('resize', checkIsDesktop);
+        return () => window.removeEventListener('resize', checkIsDesktop);
+    }, []);
+
+    if (!isDesktop) return null;
+
     const options = {
         fullScreen: { enable: false },
         background: {
@@ -9,7 +21,7 @@ const ParticlesBackground = () => {
                 value: "transparent",
             },
         },
-        fpsLimit: 120,
+        fpsLimit: 60, // Lowered from 120 for better performance even on desktop
         interactivity: {
             events: {
                 onClick: {
