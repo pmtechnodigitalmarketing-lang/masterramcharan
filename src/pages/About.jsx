@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Sparkles, Eye, Star, ChevronRight, Lock, Quote, Globe, Target } from 'lucide-react';
-import ParticlesBackground from '../components/ParticlesBackground';
 import FAQ from '../components/FAQ';
 import SEO from '../components/SEO';
 import { buildPersonSchema, buildBreadcrumbSchema } from '../schema';

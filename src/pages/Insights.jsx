@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Clock, Star, Quote } from 'lucide-react';
-import ParticlesBackground from '../components/ParticlesBackground';
 import FAQ from '../components/FAQ';
 import SEO from '../components/SEO';
 import { buildArticleSchema, buildBreadcrumbSchema } from '../schema';

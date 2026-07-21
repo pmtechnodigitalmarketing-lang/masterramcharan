@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Heart, Star, Moon, Crown, ArrowRight, CheckCircle2, MapPin, Eye, Compass, Award, Globe, TrendingUp, ShieldCheck, X } from 'lucide-react';
 import { categories, services } from '../data/services';
-import ParticlesBackground from '../components/ParticlesBackground';
 import ZodiacWheel from '../components/ZodiacWheel';
 import AccordionGallery from '../components/AccordionGallery';
 import FAQ from '../components/FAQ';
