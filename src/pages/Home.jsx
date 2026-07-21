@@ -96,9 +96,9 @@ const Home = () => {
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentText}
-                    initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     style={{
                       background: heroTexts[currentText].color,
@@ -162,13 +162,12 @@ const Home = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
                   >
-                    <motion.img
+                    <img
                       src={heroTexts[currentText].image}
                       alt={heroTexts[currentText].text}
                       fetchPriority="high"
                       loading="eager"
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                      className="hero-img-animate"
                       style={{
                         width: '100%',
                         height: '100%',

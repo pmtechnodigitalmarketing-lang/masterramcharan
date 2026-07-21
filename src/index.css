@@ -195,6 +195,18 @@ a {
   animation: pulse-glow 2s infinite;
 }
 
+/* Hero Image subtle scale animation (GPU Accelerated) */
+@keyframes hero-scale-anim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.hero-img-animate {
+  animation: hero-scale-anim 15s ease-in-out infinite;
+  will-change: transform;
+}
+
 /* Navigation Links Hover */
 .nav-item {
   position: relative;
