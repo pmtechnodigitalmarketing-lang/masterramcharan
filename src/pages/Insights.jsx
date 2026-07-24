@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { m as motion } from 'framer-motion';
 import { ChevronRight, Clock, Star, Quote } from 'lucide-react';
 import FAQ from '../components/FAQ';
@@ -50,7 +50,7 @@ const articles = [
         excerpt: "Prepare your physical and material assets for the upcoming astrological shift that will redefine global markets.",
         category: "Astrological Forecast",
         readTime: "10 min read",
-        image: "/images/All Of The Planets That Will Retrograde In 2025 â€”___.webp"
+        image: "/images/All Of The Planets That Will Retrograde In 2025 —___.webp"
     },
     {
         id: 5,
