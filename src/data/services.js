@@ -1697,5 +1697,170 @@ export const services = [
         "title": "Private Client"
       }
     ]
+  },
+  {
+    "id": "psychic-reading",
+    "categoryId": "premium-offerings",
+    "title": "Psychic Reading (Pillar)",
+    "shortDescription": "Experience profound clarity and spiritual guidance with our premium psychic reading services. Align your karmic path and unlock your true potential.",
+    "longDescription": "A psychic reading is more than just a glimpse into the future; it is a profound connection to the universal energies that shape your reality. Our master psychics utilize a combination of clairvoyance, energy reading, and intuitive channeling to provide you with absolute clarity.\n\nWhether you are facing crossroads in your relationships, seeking validation for your career choices, or simply yearning for a deeper spiritual awakening, our sessions are tailored to empower you and realign your karmic trajectory.",
+    "benefits": [
+      "Deep energetic aura scanning",
+      "Clairvoyant and intuitive insights",
+      "Identification of spiritual blockages",
+      "Actionable guidance for the future"
+    ],
+    "image": "/images/consult-best-astrologer.webp",
+    "faqs": [
+      {
+        "q": "What can I expect during a psychic reading?",
+        "a": "During a reading, our master psychics will connect with your energy field. They may use clairvoyance, intuition, and spiritual guides to provide insights into your past, present, and future, offering clarity on love, career, and personal growth."
+      },
+      {
+        "q": "Are the readings conducted online or in person?",
+        "a": "We offer both! You can visit one of our physical sanctuaries or book a remote reading via video call, which is just as accurate and effective as an in-person session."
+      },
+      {
+        "q": "How often should I get a psychic reading?",
+        "a": "This depends on your personal journey. Some clients seek guidance monthly for ongoing support, while others come during major life transitions or when facing difficult crossroads. Every 3-6 months is typical."
+      },
+      {
+        "q": "Is my reading confidential?",
+        "a": "Absolutely. We uphold the strictest standards of privacy and confidentiality. Your personal information and the contents of your reading are completely secure."
+      }
+    ],
+    "whoIsThisFor": "Individuals seeking profound clarity regarding love, career, and spiritual growth.",
+    "testimonials": [
+      {
+        "quote": "My reading was incredibly accurate. Charan picked up on details about my career that I hadn't told anyone.",
+        "name": "Sarah M.",
+        "title": "Business Owner"
+      },
+      {
+        "quote": "I was at a crossroads in my relationship. The insights I received were profound and helped me heal old wounds. Highly recommend their psychic services.",
+        "name": "David L.",
+        "title": "Consultant"
+      },
+      {
+        "quote": "A truly transformative experience. The energy in the room was palpable, and the guidance was exactly what my soul needed to hear.",
+        "name": "Elena R.",
+        "title": "Private Client"
+      },
+      {
+        "quote": "The level of clarity provided was astounding. I feel like a massive weight has been lifted.",
+        "name": "Anonymous",
+        "title": "Executive"
+      }
+    ]
+  },
+  {
+    "id": "tarot-reader-near-me",
+    "categoryId": "vedic-sciences",
+    "title": "Tarot Reader Near Me",
+    "shortDescription": "Find the best local tarot reader near you. Unveil your past, present, and future with expert tarot card readings that offer deep spiritual insights.",
+    "longDescription": "Tarot is a powerful mirror reflecting the deep truths of your subconscious mind. Searching for a 'tarot reader near me' means you are ready for answers, and our expert readers are here to deliver precise, actionable insights.\n\nOur readings transcend geographical limitations, providing you with high-frequency spiritual guidance whether you choose an in-person consultation or a remote session from the comfort of your home.",
+    "benefits": [
+      "Accurate love and relationship spreads",
+      "Career and financial forecasting",
+      "Spiritual blockage identification",
+      "Accessible online and locally"
+    ],
+    "image": "/images/Using Tarot Spreads for Specific Questions and Situations _ Embark on a Spiritual Journey_ Transf___.webp",
+    "faqs": [
+      {
+        "q": "Are tarot readings accurate if done remotely?",
+        "a": "Yes! Energy has no physical boundaries. Our master tarot readers tap into your energetic frequency regardless of distance, making remote readings just as accurate and insightful as in-person sessions."
+      },
+      {
+        "q": "What types of questions can I ask during a tarot reading?",
+        "a": "You can ask about almost anything—love, career, spiritual growth, or specific life decisions. Open-ended questions (e.g., 'What do I need to know about my career path?') yield the most profound insights."
+      },
+      {
+        "q": "Do I need to prepare anything before my reading?",
+        "a": "Just come with an open mind and a calm spirit. It helps to take a few deep breaths before the session and write down any specific questions you want answered."
+      },
+      {
+        "q": "Are your tarot readers locally available?",
+        "a": "We have a network of master readers available globally online, and select practitioners available in our local sanctuaries. When you book, you can specify your preference for an in-person or virtual reading."
+      }
+    ],
+    "whoIsThisFor": "Anyone looking for immediate, accessible guidance through the power of Tarot cards.",
+    "testimonials": [
+      {
+        "quote": "I've been to many tarot readers, but the accuracy here is unmatched. It felt like they were reading my mind.",
+        "name": "Jessica T.",
+        "title": "Local Client"
+      },
+      {
+        "quote": "I did an online reading and was skeptical at first, but the cards pulled exactly matched my current life situation. Incredible.",
+        "name": "Michael B.",
+        "title": "Entrepreneur"
+      },
+      {
+        "quote": "The guidance I received was gentle yet profound. I finally know what I need to do to fix my relationship.",
+        "name": "Amanda W.",
+        "title": "Designer"
+      },
+      {
+        "quote": "Beautiful energy, clear answers, and actionable advice. I will definitely be returning for another reading.",
+        "name": "Carlos M.",
+        "title": "Artist"
+      }
+    ]
+  },
+  {
+    "id": "psychic-reading-near-me",
+    "categoryId": "premium-offerings",
+    "title": "Psychic Reading Near Me",
+    "shortDescription": "Looking for a trusted psychic reading near you? Connect with top-tier spiritual advisors for accurate, transformative readings and aura alignments.",
+    "longDescription": "When you search for a 'psychic reading near me,' you are seeking immediate connection and authentic spiritual support. Our elite network of psychics offers accessible, high-vibrational guidance tailored to your unique energetic signature.\n\nBy establishing a localized energetic link, our practitioners can accurately read your aura, resolve lingering karmic debts, and guide you towards your ultimate destiny—whether through virtual sessions or in-person consultations.",
+    "benefits": [
+      "Immediate access to top spiritual advisors",
+      "Accurate energy and aura readings",
+      "Guidance on love, career, and life path",
+      "Ethical, confidential, and highly rated"
+    ],
+    "image": "/images/Psychic Reading_ Fast, In-Depth Insight - Same Hour Service by Alice.webp",
+    "faqs": [
+      {
+        "q": "How do I find a reputable psychic near me?",
+        "a": "Look for advisors with verified testimonials, a clear ethical code, and transparency in their services. We rigorously vet all practitioners to ensure you receive only the highest quality guidance."
+      },
+      {
+        "q": "Can a local psychic help with a curse or hex?",
+        "a": "Yes. Our expert practitioners specialize in identifying and safely removing negative energetic attachments, curses, and hexes using divine white light methodologies."
+      },
+      {
+        "q": "Do you offer emergency or same-day readings?",
+        "a": "Depending on availability, we do offer priority bookings for urgent spiritual crises. Please contact our support team to check for immediate openings."
+      },
+      {
+        "q": "What is the difference between an aura reading and a standard psychic reading?",
+        "a": "An aura reading focuses specifically on the electromagnetic field surrounding your body, identifying energetic blocks and emotional imprints, whereas a standard psychic reading provides broader insights into your past, present, and future timelines."
+      }
+    ],
+    "whoIsThisFor": "People looking for immediate, local, and trustworthy psychic support and aura alignment.",
+    "testimonials": [
+      {
+        "quote": "I was looking for someone nearby and found Charan. The reading was so accurate and comforting. I finally feel at peace.",
+        "name": "Robert K.",
+        "title": "Local Client"
+      },
+      {
+        "quote": "I didn't want to travel far, so finding this service near me was a blessing. The energy cleansing changed my life.",
+        "name": "Lisa M.",
+        "title": "Verified Review"
+      },
+      {
+        "quote": "Very professional and completely discreet. The reading was spot on about my current financial situation.",
+        "name": "James H.",
+        "title": "Local Client"
+      },
+      {
+        "quote": "Finding a genuine psychic nearby seemed impossible until now. The insights were deep, respectful, and highly accurate.",
+        "name": "Emily S.",
+        "title": "Teacher"
+      }
+    ]
   }
 ];

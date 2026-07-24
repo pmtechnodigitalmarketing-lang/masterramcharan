@@ -221,7 +221,7 @@ const Layout = () => {
         {/* Bottom Bar */}
         <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.05)', background: 'rgba(0,0,0,0.02)' }}>
           <div className="container mobile-col mobile-text-center mobile-gap-sm" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0', fontSize: '0.85rem', color: 'rgba(0,0,0,0.6)' }}>
-            <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} {business.legalName}. Absolute Discretion Assured.</p>
+            <p style={{ margin: 0 }}>&copy; 2017 {business.legalName}. Absolute Discretion Assured.</p>
             <div style={{ display: 'flex', gap: '2rem' }}>
               <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>NDA Policy</span>
               <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--color-gold)'} onMouseOut={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>Terms of Engagement</span>

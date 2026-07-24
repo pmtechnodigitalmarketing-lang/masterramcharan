@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { m as motion } from 'framer-motion';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
@@ -108,7 +108,7 @@ const StateServices = () => {
                     <h3 style={{ fontSize: '1.25rem', color: 'var(--color-navy-dark)', fontFamily: 'var(--font-heading)', marginBottom: '1rem' }}>
                       {service.title}
                     </h3>
-                    <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flex: 1 }}>
+                    <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flex: 1, display: '-webkit-box', WebkitLineClamp: 5, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                       {service.shortDescription}
                     </p>
 
